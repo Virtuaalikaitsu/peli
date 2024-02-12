@@ -22,14 +22,10 @@ public class UImanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject k = kuva.gameObject;
+        Cursor.lockState = CursorLockMode.Locked;
 
-        float width = Screen.width / 2 - (k.GetComponent<RectTransform>().rect.width / 2);
-        float height = Screen.height / 2; // - (k.GetComponent<RectTransform>().rect.height / 2);
+        Cursor.visible = false;
 
-        k.transform.DOMoveX(width, 2).SetEase(Ease.OutExpo);
-        k.transform.DOMoveY(height, 2).SetEase(Ease.OutExpo);
-        
         Debug.Log("Aloita DoTween");
         //kuva.SetBool("toista", true);
         NPC = GameObject.FindGameObjectsWithTag("npc");
